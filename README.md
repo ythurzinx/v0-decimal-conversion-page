@@ -1,30 +1,24 @@
-# Decimal conversion page
+# Decimal Conversion Page
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Uma aplicação web simples e interativa hospedada na **Vercel**, que permite converter números decimais para **binário** ou **hexadecimal** de forma rápida e intuitiva.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/arthuralencar2006-6075s-projects/v0-decimal-conversion-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/hzQTjTf2J7Z)
+---
 
-## Overview
+## Como Funciona
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+1. O usuário insere um número decimal.  
+2. Escolhe a base desejada (Binário ou Hexadecimal).  
+3. O sistema realiza a conversão automaticamente e exibe o resultado na tela.  
 
-## Deployment
+A interface foi pensada para ser simples, limpa e responsiva, permitindo testes rápidos de conversão numérica.
 
-Your project is live at:
+---
 
-**[https://vercel.com/arthuralencar2006-6075s-projects/v0-decimal-conversion-page](https://vercel.com/arthuralencar2006-6075s-projects/v0-decimal-conversion-page)**
+## Tecnologias Utilizadas
 
-## Build your app
+- HTML5  
+- CSS3  
+- JavaScript (ES6)  
+- Vercel – para hospedagem e deploy contínuo  
 
-Continue building your app on:
-
-**[https://v0.app/chat/hzQTjTf2J7Z](https://v0.app/chat/hzQTjTf2J7Z)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
