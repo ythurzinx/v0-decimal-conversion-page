@@ -6,7 +6,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #333;
   min-height: 100vh;
   display: flex;
@@ -17,8 +17,8 @@ body {
 
 .container {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   padding: 40px;
   max-width: 500px;
   width: 100%;
@@ -33,6 +33,7 @@ header h1 {
   color: #2c3e50;
   font-size: 28px;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 header p {
@@ -59,20 +60,31 @@ label {
 }
 
 input[type="number"] {
-  padding: 12px 16px;
+  padding: 14px 16px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: inherit;
 }
 
 input[type="number"]:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Estilo para input com erro */
+input[type="number"].error {
+  border-color: #e74c3c;
+}
+
+input[type="number"].error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
 .convert-button {
-  background-color: #3498db;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
   padding: 14px 24px;
@@ -80,34 +92,89 @@ input[type="number"]:focus {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .convert-button:hover {
-  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 .convert-button:active {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
-.result-section {
-  min-height: 100px;
-  padding: 20px;
-  background-color: #f8f9fa;
+/* Estilo para mensagens de erro */
+.error-message {
+  display: none;
+  padding: 12px 16px;
+  background-color: #fee;
+  border: 1px solid #fcc;
   border-radius: 8px;
-  border: 2px dashed #e0e0e0;
+  color: #c33;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Melhorias na área de resultados com bordas e cores */
+.result-section {
+  min-height: 120px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  border: 2px solid #667eea;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #95a5a6;
-  font-style: italic;
+  transition: all 0.3s ease;
 }
 
 .result-section:empty::before {
   content: "O resultado aparecerá aqui...";
+  color: #95a5a6;
+  font-style: italic;
 }
 
+/* Estilo para os resultados exibidos */
+.result-content {
+  width: 100%;
+}
+
+.result-item {
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-item:last-child {
+  margin-bottom: 0;
+}
+
+.result-label {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-value {
+  font-size: 18px;
+  color: #667eea;
+  font-weight: 600;
+  margin-top: 4px;
+  font-family: "Courier New", monospace;
+}
+
+/* Melhorias na responsividade */
 @media (max-width: 600px) {
   .container {
     padding: 24px;
@@ -115,5 +182,28 @@ input[type="number"]:focus {
 
   header h1 {
     font-size: 24px;
+  }
+
+  input[type="number"],
+  .convert-button {
+    font-size: 14px;
+  }
+
+  .result-value {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 20px;
   }
 }
